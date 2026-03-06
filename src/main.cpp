@@ -70,10 +70,9 @@ int main() {
     // }
     // cout << endl;
 
-
-    // cout << "FIFO misses: " << fifo(k, requests) << endl;
-    // cout << "LRU misses: " << lru(k, requests) << endl;
-    cout << "OPTFF misses: " << optff(k, requests) << endl;
+    cout << "FIFO misses: " << fifo(k, requests) << endl
+    << "LRU misses: " << lru(k, requests) << endl
+    << "OPTFF misses: " << optff(k, requests) << endl;
 
     return 0;
 }
