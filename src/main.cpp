@@ -142,6 +142,5 @@ int optff(int k, vector<int> &requests) {
         cache[evict_idx] = req;
     }
 
-
     return misses;
 }
