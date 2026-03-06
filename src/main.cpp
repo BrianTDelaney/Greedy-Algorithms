@@ -33,7 +33,50 @@ int optff(int k, vector<int> &requests) {
     
     // iterate through request array
     for (int i = 0; i < requests.size(); i++) {
+        int req = requests[i];
 
+        // hit
+        if (find(cache.begin(), cache.end(), req) !=cache.end()) {
+            continue;
+        }
+
+        misses++;
+
+        if (cache.size() < k) { // add req to cache
+            cache.push_back(req);
+            continue;
+        }
+
+        // Farthest-in-Future Eviction Policy
+        int farthest = -1;
+        int evict_idx = -1;
+
+        // iterate through each element in cache
+        // determine which element is reused furthest in future and evict it
+        for (int j = 0; j < cache.size(); j++) {
+            int item = cache[j];
+            int next_use = -1;
+
+            // see when j is next called in request sequence
+            for (int t = i+1; t < requests.size(); t++) {
+                if (requests[t] == item) {
+                    next_use = t;
+                    break;
+                }
+            }
+
+            if (next_use == -1) { // never used again
+                evict_idx = j;
+                break;
+            }
+
+            if (next_use > farthest) {
+                farthest = next_use;
+                evict_idx = j;
+            }
+        }
+
+        cache[evict_idx] = req;
     }
 
 
