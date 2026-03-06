@@ -11,6 +11,34 @@ int optff(int k, vector<int> &requests);
 
 int main() {
 
+    int k;
+    int m;
+    cin >> k >> m;
+
+    // cout << "k=" << k << " m=" << m << endl; // debugging
+
+    vector<int> requests; 
+    // NOTE: Initialization as a finite size led to issues trailing 0 in requests 
+    // and an incorrect number of misses (added extra miss because 0 shouldn't be a request)
+    int req;
+
+    for (int i = 0; i < m; i++) {
+        cin >> req;
+        requests.push_back(req);
+    }
+    // cout << "size: " << requests.size() << endl; // debugging
+
+    // // debugging
+    // for (int i = 0; i < requests.size(); i++) {
+    //     cout << requests[i] << " ";
+    // }
+    // cout << endl;
+
+
+    // cout << "FIFO misses: " << fifo(k, requests) << endl;
+    // cout << "LRU misses: " << lru(k, requests) << endl;
+    cout << "OPTFF misses: " << optff(k, requests) << endl;
+
     return 0;
 }
 
