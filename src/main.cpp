@@ -25,6 +25,26 @@ int fifo(int k, vector<int> requests) {
     return misses;
 }
 
+int lru(int k, vector<int> requests) {
+    deque<int> cache;
+    int misses = 0;
+    for (int request : requests) {
+        auto it = find(cache.begin(), cache.end(), request);
+        if (it == cache.end()) {
+            misses++;
+            if (cache.size() == k) {
+                cache.pop_front();
+            }
+            cache.push_back(request);
+        }
+        else {
+            cache.erase(it);
+            cache.push_back(request);
+        }
+    }
+    return misses;
+}
+
 int main() {
 
     int k;
