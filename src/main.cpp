@@ -6,8 +6,6 @@
 
 using namespace std;
 
-// TODO: Insert FIFO declaration
-// TODO: Insert LRU declaration
 int optff(int k, vector<int> &requests);
 
 int fifo(int k, vector<int> requests) {
@@ -70,18 +68,13 @@ int main() {
     // }
     // cout << endl;
 
-    cout << "FIFO misses: " << fifo(k, requests) << endl
-    << "LRU misses: " << lru(k, requests) << endl
-    << "OPTFF misses: " << optff(k, requests) << endl;
+    cout << "FIFO  : " << fifo(k, requests) << endl
+    << "LRU   : " << lru(k, requests) << endl
+    << "OPTFF : " << optff(k, requests) << endl;
 
     return 0;
 }
 
-
-
-// TODO: Insert FIFO definition
-
-// TODO: Insert LRU definition
 
 int optff(int k, vector<int> &requests) {
     // Parameters:
@@ -141,7 +134,6 @@ int optff(int k, vector<int> &requests) {
 
         cache[evict_idx] = req;
     }
-
 
     return misses;
 }

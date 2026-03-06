@@ -1,4 +1,5 @@
 # Greedy-Algorithms
+Authors: Braden Azis (UFID: 20730106) and Brian Delaney (UFID: )
 
 ## How to Compile
 Compile using make.
@@ -9,7 +10,12 @@ Run the program by piping an input file into the executable:
     ./main < input/<input_file>
 ```
 
-Example:
+### Example:
 ```
-    ./main < input/test1.in
+    ./main < input/example.in
 ```
+Can compare output in terminal to expected example output at 
+```
+    output/example.out
+```
+
