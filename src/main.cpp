@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <queue>
+#include <algorithm>
 #include <fstream>
 
 using namespace std;
@@ -8,6 +10,20 @@ using namespace std;
 // TODO: Insert LRU declaration
 int optff(int k, vector<int> &requests);
 
+int fifo(int k, vector<int> requests) {
+    deque<int> cache;
+    int misses = 0;
+    for (int request : requests) {
+        if (find(cache.begin(), cache.end(), request) == cache.end()) {
+            misses++;
+            if (cache.size() == k) {
+                cache.pop_front();
+            }
+            cache.push_back(request);
+        }
+    }
+    return misses;
+}
 
 int main() {
 
