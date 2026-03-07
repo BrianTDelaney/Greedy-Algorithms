@@ -49,8 +49,6 @@ int main() {
     int m;
     cin >> k >> m;
 
-    // cout << "k=" << k << " m=" << m << endl; // debugging
-
     vector<int> requests; 
     // NOTE: Initialization as a finite size led to issues trailing 0 in requests 
     // and an incorrect number of misses (added extra miss because 0 shouldn't be a request)
@@ -60,13 +58,6 @@ int main() {
         cin >> req;
         requests.push_back(req);
     }
-    // cout << "size: " << requests.size() << endl; // debugging
-
-    // // debugging
-    // for (int i = 0; i < requests.size(); i++) {
-    //     cout << requests[i] << " ";
-    // }
-    // cout << endl;
 
     cout << "FIFO  : " << fifo(k, requests) << endl
     << "LRU   : " << lru(k, requests) << endl
