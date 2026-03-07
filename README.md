@@ -33,7 +33,7 @@ These results show that OPTFF has the fewest misses, while the comparative perfo
 ## Question 2:
 
 For k = 3 there does indeed exist a request sequence where OPTFF incurs strictly fewer misses than both FIFO and LRU.
-This sequence can be seen in [test1.in](input/test1.in) and the miss counts for each algorithm can be observed in row 1 of the chart in Question 1.
+This sequence can be seen in [test2.in](input/test2.in) and the miss counts for each algorithm can be observed in row 2 of the chart in Question 1.
 
 ## Question 3:
 Assume there exists an algorithm A that is offline and optimal, and is not the OPTFF. Because A and OPTFF are not the same, they will
