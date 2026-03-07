@@ -1,5 +1,5 @@
 # Greedy-Algorithms
-Authors: Braden Azis (UFID: 20730106) and Brian Delaney (UFID: )
+Authors: Braden Azis (UFID: 20730106) and Brian Delaney (UFID: 31542651)
 
 ## How to Compile
 Compile using make.
